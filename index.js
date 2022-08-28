@@ -1,5 +1,13 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const knownNumbers = {};
+  for (const number of array){
+    const complement = target - number;
+    if (complement in knownNumbers) return true;
+    knownNumbers[number] = true;
+}
+return false;
+
 }
 
 /* 
@@ -8,6 +16,11 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  -a function called `hasTargetSum` that receives two arguments:
+  - an `array` of integers
+ - a `target` integers
+ -The function should return true if any pair of numbers in the array adds up to
+the target number.
 */
 
 /*
